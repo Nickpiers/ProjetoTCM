@@ -1,20 +1,28 @@
 import React from "react";
 import { Draggable } from "./Draggable";
+import {
+  ATIVOS,
+  PASSO_POSICAO_ATIVO,
+  POSICAO_INICIAL_X,
+  POSICAO_INICIAL_Y,
+} from "../controller/ativosConstants";
+import { calculaPosicaoY } from "../controller/commonController";
+import { SelectBar } from "./SelectBar";
 
 export const ProjetoTCM = () => {
-  const pos1 = { x: 180, y: 160 };
-  const pos2 = { x: 180, y: 290 };
-  const pos3 = { x: 180, y: 420 };
-  const pos4 = { x: 180, y: 550 };
-  const pos5 = { x: 180, y: 680 };
-
   return (
     <>
-      <Draggable initialPos={pos1} texto="Santander" />
-      <Draggable initialPos={pos2} texto="Bradesco" />
-      <Draggable initialPos={pos3} texto="Itaú" />
-      <Draggable initialPos={pos4} texto="Nubank" />
-      <Draggable initialPos={pos5} texto="C6" />
+      <SelectBar />
+      {ATIVOS.map((ativo, index) => (
+        <Draggable
+          key={index}
+          initialPos={{
+            x: POSICAO_INICIAL_X,
+            y: calculaPosicaoY(POSICAO_INICIAL_Y, PASSO_POSICAO_ATIVO, index),
+          }}
+          texto={ativo}
+        />
+      ))}
     </>
   );
 };

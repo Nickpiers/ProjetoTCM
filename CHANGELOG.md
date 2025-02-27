@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [SNAPSHOT]
 
+## [0.0.3] - 27 Fev. 2025
+
+### Added
+
+- Importando csv com lista de ações da B3
+- Criando componente de SelectBar (parcial)
+
 ## [0.0.2] - 27 Fev. 2025
 
 ### Added
