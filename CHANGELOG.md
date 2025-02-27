@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [SNAPSHOT]
 
+## [0.0.2] - 27 Fev. 2025
+
+### Added
+
+- Colocando elemento draggable
+- Adicionando tratamento de voltar draggable pro lugar inicial
+
 ## [0.0.1] - 26 Fev. 2025
 
 ### Added
