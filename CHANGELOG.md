@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [SNAPSHOT]
 
+## [0.0.4] - 08 Mar. 2025
+
+### Added
+
+- Adicionando lista limitada para aparecer no SelectBar
+- Adicionando checkbox
+- Adicionando lógica de draggable conforme checkbox
+- Removendo mock de draggable
+
 ## [0.0.3] - 27 Fev. 2025
 
 ### Added
