@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const Draggable = ({ initialPos = { x: 0, y: 0 }, children }) => {
+export const Draggable = ({ initialPos, texto }) => {
   const [pos, setPos] = useState(initialPos);
   const [dragging, setDragging] = useState(false);
   const [rel, setRel] = useState(null);
@@ -18,6 +18,14 @@ export const Draggable = ({ initialPos = { x: 0, y: 0 }, children }) => {
       document.removeEventListener("mouseup", onMouseUp);
     };
   }, [dragging]);
+
+  useEffect(() => {
+    if (!dragging) {
+      if (pos !== initialPos) {
+        setPos(initialPos);
+      }
+    }
+  }, [dragging, pos, initialPos]);
 
   const onMouseDown = (e) => {
     if (e.button !== 0) return;
@@ -46,9 +54,12 @@ export const Draggable = ({ initialPos = { x: 0, y: 0 }, children }) => {
         border: "2px solid #aa5",
         padding: "10px",
         backgroundColor: "#fff",
+        width: "150px",
+        height: "75px",
       }}
+      className="flex items-center justify-center"
     >
-      {children}
+      <div className="text-black text-center">{texto}</div>
     </div>
   );
 };
